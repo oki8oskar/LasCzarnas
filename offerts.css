@@ -1,0 +1,21 @@
+.oferta{
+  float: left;
+
+  width: 19.35%;
+  height: 380px;
+
+  margin: 5px;
+  border: 1px ridge black;
+}
+
+
+.off_img{
+  width: 100%;
+  height: 300px;
+}
+#nazwa {
+  text-align:center;
+}
+body {
+	overflow-x: hidden;
+}

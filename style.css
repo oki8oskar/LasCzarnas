@@ -1,0 +1,59 @@
+/* elementy uniwersalne */
+*{
+	font-family: 'Segoe UI';
+	margin:0;
+}
+
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+.menulink{
+  font-size: 1.6em;
+  color: black;
+  float: right;
+  /*text-align: center;*/
+  text-decoration: none;
+  height: 1.5em;
+  margin: 30px;
+  margin-top: 43px;
+}
+
+.menulink:hover{
+  /*text-align: center;*/
+  text-decoration: underline;
+}
+
+#login_button{
+	margin-top: 30px;	
+}
+
+#header{
+	height: 130px;
+	width: 100%;
+	background-image: linear-gradient(to left,#03a,#00f);
+	padding: 3px;
+  	background: linear-gradient(to right, #0C00C4, #0083FA);
+}
+
+#logo{
+	float: left;
+}
+
+#co_name{
+	float: left;
+	margin-top: 40px;
+}
+
+#fixed_panel{
+	text-align: center;
+	position: fixed;
+	width: 100%;
+}
+
+.sorry bro {
+  width:500px;
+  height:500px;
+}
