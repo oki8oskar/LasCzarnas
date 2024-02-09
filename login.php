@@ -38,14 +38,17 @@
 			
 			</br></br>
 		
-		<form action='./images/sorry_bro.png'  method='post' id='li_form'>
+		<form action='./auth.php?a=login'  method='post' id='li_form'>
+			<?php if(@$_GET['error']) {echo "Coś ci chyba nie poszło, koleżko";} ?>
 			<input type='text' name='login' placeholder='Login' class='login_input'></br>
 			<input type='password' name='pwrd' placeholder='Hasło' class='login_input'></br>
 			<button type="submit" class='formbuttons'>Zaloguj</button>
 		</form>
 		
-		<form action='./images/sorry_bro.png'  method='post' id='reg_form' style="display: none;" width: 40%>
+		<form action='./auth.php?a=new_account'  method='post' id='reg_form' style="display: none;" width: 40%>
+			<?php if(@$_GET['error']) {echo "Coś ci chyba nie poszło, koleżko";} ?>
 			</label> <input type='text' placeholder='Login' name='login' class='login_input'></br>
+			</label> <input type='text' placeholder='E-mail' name='email' class='login_input'></br>
 			</label> <input type='password' placeholder='Hasło' name='pwrd' class='login_input'></br>
 			</label> <input type='password' placeholder='Powtórz hasło' name='pwrd_r' class='login_input'></br>
 			<button type="submit" class='formbuttons'>Potwierdz</button>
