@@ -8,11 +8,11 @@
       <link rel="stylesheet" href="./carousell.css">
   </head>
   <body>
-	<div id='header'> 
+	<div id='header'>
 	  	<a id="logo" href='index.php'><img src='./images/logo_new.svg' alt='Las Czarnas Customs' width='124'></a>
      	<h1 id='co_name'><a id="logo" href='index.php'>LAS CZARNAS CUSTOMS</h1></a>
-		
-		<a class="menulink" id='login_button' href='./login.php'> <img src='./images/login_ico_black.svg' alt="Logowanie/Rejestracja" height='64'></a>
+
+		<a class="menulink" id='login_button' href='./account.php'> <img src='./images/login_ico_black.svg' alt="Logowanie/Rejestracja" height='64'></a>
 	    <a class="menulink" href='./salon.php'> Salon samochodowy </a>
 		<a class="menulink" href='./parts.php'> Warsztat </a>
     <!--TŁUMACZENIE STRONY (ciągle nad tym pracujemy)
@@ -22,7 +22,7 @@
 
 	</div>
     <div id="stopy">
-      
+
     </div>
 
 <div class="slideshow-container" id="karuzela">
@@ -57,16 +57,16 @@
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
 <script>
-  
 
 
-  
+
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -82,19 +82,19 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
 </script>
-	  
+
     </div>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->

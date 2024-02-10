@@ -1,14 +1,16 @@
 Podstrony:
-	index.php
-	parts.php
-	salon.php
-	contact.php
+	index.php - Strona Główna
+	parts.php - Sklep z częściamui
+	salon.php - Salon samochodowy
+	contact.php - strona kontaktowa
+	account.php - strona konta
 
 Arkusze stylów:
-	style.css
-	dark.css
- 	*mobile.css
+	style.css - domyślny
+	dark.css - ciemny
+ 	*mobile.css - mobilny
 
 Pliki techniczne php:
-	connecting.php
  	auth.php
+
+Skrypty js:

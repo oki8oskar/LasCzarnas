@@ -2,10 +2,11 @@
     $con = mysqli_connect("localhost","root","","las_czarnas");
     $action = $_GET['a'];
 
-    if (@mysqli_connect_errno()) {
-      echo "Błąd połączenia z bazą danych! Kod Błędu: " . mysqli_connect_error() . " . <a href='./index.html'>Powtór na stronę główną</a>";
+    if ($error = @mysqli_connect_errno()) {
+      header("Location: error.php?error_code=$error");
       exit();
-    }else{
+    }
+    else{
         switch($action){
             case("new_account"):
                 $username = $_POST['login'];
@@ -20,6 +21,7 @@
                     }
                 }else{
                     echo "Pomyślnie utworzono konto!";
+                    header("Location: account.php?first_time=true");
                 }
                 break;
             case("login"):
@@ -31,11 +33,13 @@
                 if(@$result['username'] != NULL){
                     session_start();
                     $_SESSION['username'] = $result['username'];
+                    header("Location: account.php");
                 }else{
                     echo "Nieprawidłowy login lub hasło!";
                     header('Location: login.php?error=true');
                 }
                 break;
+            msqli_close();
         }
     }
 ?>
