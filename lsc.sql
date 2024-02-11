@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2024 at 03:03 PM
--- Wersja serwera: 10.4.28-MariaDB
--- Wersja PHP: 8.2.4
+-- Czas generowania: 11 Lut 2024, 11:05
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `las_czarnas`
+-- Baza danych: `las_czarnas`
 --
-CREATE DATABASE IF NOT EXISTS `las_czarnas` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `las_czarnas`;
 
 -- --------------------------------------------------------
 
@@ -57,16 +55,6 @@ CREATE TABLE `klienci` (
   `kod_pocztowy` varchar(255) DEFAULT NULL,
   `punkty_stalego_klienta` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `klienci`
---
-
-INSERT INTO `klienci` (`id_klienta`, `username`, `pwrd`, `email`, `imie`, `nazwisko`, `telefon`, `miasto`, `adres`, `kod_pocztowy`, `punkty_stalego_klienta`) VALUES
-(3, 'adam', 'haslo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'andrzej', '$2y$10$e1nou.31R4Vyd7PSZ7mZPOXtuTS4Nkq31sqYY9jhb2wdcprrJQ6ne', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'kutas', '$2y$10$Um8QdJSZBozT8sMj6JDaIuQQf8Tvy4TdSNVaWwCEAswFhP0aFVw7e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, '', '$2y$10$lKH8HVU3tGlk3/wOHvOhPO3XJ7cfOQ30u/Ucxo41CKZ7LjITmqjia', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -214,11 +202,27 @@ ALTER TABLE `zakupione_czesci`
   ADD PRIMARY KEY (`id_zakupu`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
--- AUTO_INCREMENT for table `klienci`
+-- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
   MODIFY `id_klienta` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+-- UŻYKTOWNICY (DODANO RĘCZNIE)
+
+CREATE USER customer;
+GRANT INSERT, UPDATE, SELECT ON las_czarnas.klienci TO customer;
+GRANT SELECT ON las_czarnas.samochody TO customer;
+GRANT SELECT ON las_czarnas.czesci TO customer;
+GRANT SELECT ON las_czarnas.modele TO customer;
+GRANT SELECT, INSERT ON las_czarnas.terminarz TO custmoer;
+GRANT SELECT, INSERT ON las_czarnas.zakupione_auta TO customer;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

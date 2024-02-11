@@ -8,20 +8,19 @@
       <link rel="stylesheet" href="./offerts.css">
   </head>
   <body>
-	<div id='header'> 
+	<div id='header'>
 	  	<a id="logo" href='index.php'><img src='./images/logo_new.svg' alt='Las Czarnas Customs' width='124'></a>
     <h1 id='co_name'><a id="logo" href='index.php'>LAS CZARNAS CUSTOMS</h1></a>
-		
+
 		<a class="menulink" id='login_button' href='./login.php'> <img src='./images/login_ico_black.svg' alt="Logowanie/Rejestracja" height='64'></a>
 	    <a class="menulink" href='./salon.php'> Salon Samochodowy</a>
-		<a class="menulink" href='./parts.php'> Warsztat </a> 	
+		<a class="menulink" href='./parts.php'> Warsztat </a>
 	</div>
     <div id='shop'>
     <!-- Wyciąganie ofert z bazy danych -->
     <!-- wariant a !-->
 
     <?php
-
       function AddDIV($name, $image, $price){
         echo "
         <div class='oferta'>
@@ -33,7 +32,16 @@
           </a>
         </div>";
       }
-
+      $con = @mysqli_connect("localhost","customer","","las_czarnas");
+      $q = "SELECT * FROM samochody";
+      $query = mysqli_query($con, $q);
+      while($result = mysqli_fetch_assoc()){
+        $nazwa = $result['']; //trza nazwe wpisać
+        $cena = $result[''];
+        $zdjecie = $result[''];
+        AddDIV();
+      }
+      /*
       $nazwa = 'Daweoo Matiz';
       $cena = '250$';
       $obraz = './images/Matiz.webp';
@@ -107,8 +115,8 @@
     $nazwa = 'Bolid Mercedesa AMG Petronas F1 Team</br> (komplet oponek w zestawie)';
     $cena = '8,500,000$';
     $obraz = './images/bolid czarnucha.jpg';
-    AddDIV($nazwa, $obraz, $cena);
-    ?> 
+    AddDIV($nazwa, $obraz, $cena);*/
+    ?>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->
     </div>

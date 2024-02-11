@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost","root","","las_czarnas");
+    $con = @mysqli_connect("localhost","customer","","las_czarnas");
     $action = $_GET['a'];
 
     if ($error = @mysqli_connect_errno()) {
@@ -29,7 +29,7 @@
                 $pwrd = password_hash($_POST['pwrd'],1);
                 $q = "SELECT username FROM klienci WHERE username = '".$username."' AND pwrd = '".$pwrd."';";
                 $query = mysqli_query($con, $q);
-                $result = mysqli_fetch_array($query);
+                $result = mysqli_fetch_assoc($query);
                 if(@$result['username'] != NULL){
                     session_start();
                     $_SESSION['username'] = $result['username'];
@@ -39,7 +39,7 @@
                     header('Location: login.php?error=true');
                 }
                 break;
-            msqli_close();
+            mysqli_close();
         }
     }
 ?>
