@@ -53,7 +53,24 @@ a{
 	width: 100%;
 }
 
+#map_left_content{
+	float:left;
+	width:40%;
+	height: 500px;
+	padding: 12%;
+}
+
+#osm{
+	float:left;
+	width:60%;
+	height:500px;
+}
+
 .sorry bro {
   width:500px;
   height:500px;
+}
+
+#film {
+	float: left;
 }

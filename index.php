@@ -94,7 +94,26 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+    </div>
+    <hr>
+    <div>
+      <span id='map_left_content'><h2>Znajdź nasz salon</h2>
+      <ul>
+        <li>Piździsko małe (13lat)</li>
+        <li>Pizdzisko mniejsze</li>
+      </ul>
+    </span>
+    <iframe width="425" height="350" id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.85283946990967%2C50.27886058231745%2C18.861798048019413%2C50.281938952651196&amp;layer=mapnik&amp;marker=50.280399792369224%2C18.85731875896454" style="border: 1px solid black"></iframe>
+    </div>
 
+      <br>
+      <hr>
+      <br>
+      
+    <div id="film">
+    <video width="60%" autoplay muted>
+      <source src="auto.mp4" type="video/mp4">
+    </video>
     </div>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->
