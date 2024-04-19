@@ -91,9 +91,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-<<<<<<< Updated upstream
-
-=======
     </div>
     <hr>
     <div>
@@ -105,15 +102,10 @@ function showSlides(n) {
     </span>
     <iframe id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.86126697063446%2C50.279242818411916%2C18.864807486534122%2C50.28073745206009&amp;layer=mapnik&amp;marker=50.27999014110222%2C18.86303722858429"></iframe></div>
 
-      <br>
-      <hr>
-      <br>
-
     <div id="film">
     <video width="60%" autoplay muted>
       <source src="auto.mp4" type="video/mp4">
     </video>
->>>>>>> Stashed changes
     </div>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->

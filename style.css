@@ -56,13 +56,11 @@ a:hover{
 	position: fixed;
 	width: 100%;
 }
-
-<<<<<<< Updated upstream
 .sorry bro {
   width:500px;
   height:500px;
 }
-=======
+
 /* elementy strony głównej */
 
 #map_left_content{
@@ -85,5 +83,7 @@ a:hover{
 .sorry bro {
   width:500px;
   height:500px;
-}
->>>>>>> Stashed changes
+
+
+#film {
+	float: left;
