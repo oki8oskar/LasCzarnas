@@ -1,13 +1,17 @@
 /* elementy uniwersalne */
+
 *{
 	font-family: 'Segoe UI';
 	margin:0;
 }
 
-
 a{
 	text-decoration: none;
 	color: black;
+}
+
+a:hover{
+	text-decoration: underline;
 }
 
 .menulink{
@@ -27,7 +31,7 @@ a{
 }
 
 #login_button{
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
 #header{
@@ -53,7 +57,33 @@ a{
 	width: 100%;
 }
 
+<<<<<<< Updated upstream
 .sorry bro {
   width:500px;
   height:500px;
 }
+=======
+/* elementy strony głównej */
+
+#map_left_content{
+	float:left;
+	width:40%;
+	height: 500px;
+	padding: 12%;
+}
+
+#film {
+	float: left;
+}
+
+#osm{
+	float:left;
+	width:60%;
+	height:500px;
+}
+
+.sorry bro {
+  width:500px;
+  height:500px;
+}
+>>>>>>> Stashed changes

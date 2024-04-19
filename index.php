@@ -4,8 +4,9 @@
     <title>Las Czarnas Customs</title>
     <meta charset="UTF-8">
     <html lang = "pl-PL">
+    <link rel="favicon" href="/images/logo.svg">
     <link rel="stylesheet" href="./style.css">
-      <link rel="stylesheet" href="./carousell.css">
+    <link rel="stylesheet" href="./carousell.css">
   </head>
   <body>
 	<div id='header'>
@@ -63,10 +64,6 @@
 </div>
 
 <script>
-
-
-
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -94,7 +91,29 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+<<<<<<< Updated upstream
 
+=======
+    </div>
+    <hr>
+    <div>
+      <span id='map_left_content'><h2>Odwiedź nasz salon</h2>
+      <ul>
+        <li>Ruda Śląska, Czarny Las 41-709</li>
+        <li>Ulica Lwa Tołstoja 6</li>
+      </ul>
+    </span>
+    <iframe id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.86126697063446%2C50.279242818411916%2C18.864807486534122%2C50.28073745206009&amp;layer=mapnik&amp;marker=50.27999014110222%2C18.86303722858429"></iframe></div>
+
+      <br>
+      <hr>
+      <br>
+
+    <div id="film">
+    <video width="60%" autoplay muted>
+      <source src="auto.mp4" type="video/mp4">
+    </video>
+>>>>>>> Stashed changes
     </div>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->
