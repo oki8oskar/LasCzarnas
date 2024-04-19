@@ -109,7 +109,7 @@ function showSlides(n) {
       <br>
       <hr>
       <br>
-      
+
     <div id="film">
     <video width="60%" autoplay muted>
       <source src="auto.mp4" type="video/mp4">
