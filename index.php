@@ -4,8 +4,9 @@
     <title>Las Czarnas Customs</title>
     <meta charset="UTF-8">
     <html lang = "pl-PL">
+    <link rel="favicon" href="/images/logo.svg">
     <link rel="stylesheet" href="./style.css">
-      <link rel="stylesheet" href="./carousell.css">
+    <link rel="stylesheet" href="./carousell.css">
   </head>
   <body>
 	<div id='header'>
@@ -63,10 +64,6 @@
 </div>
 
 <script>
-
-
-
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -95,25 +92,18 @@ function showSlides(n) {
 }
 </script>
     </div>
-    <hr>
     <div>
-      <span id='map_left_content'><h2>Znajdź nasz salon</h2>
+      <span id='map_left_content'><h2>Odwiedź nasz salon</h2>
       <ul>
-        <li>Piździsko małe (13lat)</li>
-        <li>Pizdzisko mniejsze</li>
+        <li>Ruda Śląska, Czarny Las 41-709</li>
+        <li>Ulica Lwa Tołstoja 6</li>
       </ul>
     </span>
-    <iframe width="425" height="350" id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.85283946990967%2C50.27886058231745%2C18.861798048019413%2C50.281938952651196&amp;layer=mapnik&amp;marker=50.280399792369224%2C18.85731875896454" style="border: 1px solid black"></iframe>
-    </div>
-
-      <br>
-      <hr>
-      <br>
-
+    <iframe id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.86126697063446%2C50.279242818411916%2C18.864807486534122%2C50.28073745206009&amp;layer=mapnik&amp;marker=50.27999014110222%2C18.86303722858429"></iframe></div>
     <div id="film">
-    <video width="60%" autoplay muted>
-      <source src="auto.mp4" type="video/mp4">
-    </video>
+      <video width="60%" autoplay muted>
+        <source src="film.mp4" type="video/mp4">
+        </video>
     </div>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->

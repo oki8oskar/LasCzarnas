@@ -27,7 +27,7 @@ a{
 }
 
 #login_button{
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
 #header{
@@ -46,6 +46,14 @@ a{
 	float: left;
 	margin-top: 40px;
 }
+
+#footer{
+	background-color: #22a
+	width: 100%;
+	height: 350px;
+}
+
+/* elementy strony głównej */
 
 #fixed_panel{
 	text-align: center;

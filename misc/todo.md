@@ -7,7 +7,7 @@
   7. adminpanel
   8. view_item.php - strona do wyświetlania poszczególnych produktów
   9. użytkowniy do bazy danych
-
+  10. strona wyszukiwania
 # Do poprawy
 	1. języki
   2. baza danych

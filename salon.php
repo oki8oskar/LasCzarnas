@@ -21,7 +21,7 @@
     <!-- wariant a !-->
 
     <?php
-      function AddDIV($id, $name, $image, $price){
+      /*function AddDIV($id, $name, $image, $price){
         echo "
         <div class='oferta'>
           <a href='./oferta.php?t=part&id=$id'>
@@ -31,23 +31,19 @@
           <h4> $price</h4>
           </a>
         </div>";
-      }
+      }*/
 
+      /*
       $con = @mysqli_connect("localhost","customer","","las_czarnas");
       $q = "SELECT * FROM samochody";
       $query = mysqli_query($q, $con);
       while($result = mysqli_fetch_assoc($query)){
         $id_samochodu = $result['id_samochodu'];
-        $nazwa = $result['id_modelu']; 
+        $nazwa = $result['id_modelu'];
         $cena = $result['cena'];
         $zdjecie = $result['zdjecie'];
         AddDIV($id, $nazwa, $cena, $zdjecie);
-      }
-      /*
-      $nazwa = 'Daweoo Matiz';
-      $cena = '250$';
-      $obraz = './images/Matiz.webp';
-      AddDIV($nazwa, $obraz, $cena);
+      }*/
 
       $nazwa = "Nissan Micra '93 ";
       $cena = '120$';
@@ -117,7 +113,7 @@
     $nazwa = 'Bolid Mercedesa AMG Petronas F1 Team</br> (komplet oponek w zestawie)';
     $cena = '8,500,000$';
     $obraz = './images/bolid czarnucha.jpg';
-    AddDIV($nazwa, $obraz, $cena);*/
+    AddDIV($nazwa, $obraz, $cena);
     ?>
     <div id='footer'>
     <!--kontakt i ważne rzeczy-->

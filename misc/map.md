@@ -8,6 +8,9 @@ Podstrony:
 		view_item.php - strona wyświetlania produktu
 	account.php - strona konta
 
+Strony administratorskie:
+	adminpanel.php
+
 Arkusze stylów:
 	style.css - domyślny
 	dark.css - ciemny
