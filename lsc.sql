@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 11 Lut 2024, 11:05
--- Wersja serwera: 10.4.27-MariaDB
--- Wersja PHP: 8.2.0
+-- Czas generowania: 19 Kwi 2024, 17:28
+-- Wersja serwera: 10.4.14-MariaDB
+-- Wersja PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,8 +33,25 @@ CREATE TABLE `czesci` (
   `stan` varchar(255) DEFAULT NULL,
   `kategoria` varchar(255) DEFAULT NULL,
   `producent` varchar(255) DEFAULT NULL,
-  `opis` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `opis` varchar(255) DEFAULT NULL,
+  `cena` varchar(40) DEFAULT NULL,
+  `zdjecie` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `czesci`
+--
+
+INSERT INTO `czesci` (`id_czesci`, `nazwa`, `stan`, `kategoria`, `producent`, `opis`, `cena`, `zdjecie`) VALUES
+(1, 'Lusterko lewe do Forda Focusa', 'Najlepszy', 'Lusterka', 'autorskie', 'W bardzo dobrym stanie zachowane, lepszego nie znajdziesz na terenie ca?ej Temerii', '100', 'lusterkoff.jpg'),
+(2, 'Katalizator z demonta?u Mercedesa E190', 'Nieznany bo \"po?yczony\"', 'Katalizatory', 'S?siad spod 4', 'S?siad z?odziej wi?c kradzie? si? nie liczy', '300', 'katalizator1.png'),
+(3, 'Mateusz Serek', 'Krytyczny', 'Serki i takie tam', 'Kobieta', 'Lubi ?ama? ko?ci drugoklasistom', 'ko??', 'ser.png'),
+(4, 'Zderzak fajny XD', 'Dobry', 'Zderzaki', 'Toyota', 'Zderzak jest, auta ni ma', 'Nie sta? cie', 'zderzak.jfif'),
+(5, 'Kabel RJ45', 'Skr?cony', 'Kabelki', 'Informatycy z kopernika', 'Mo?esz mie? kierownice z internetem', 'ZA DARMO', 'kabl.jfif'),
+(6, 'Grzybulec', 'Zebrany', 'Grzyby', 'Nintendo', 'Powi?ksza ci? i daje dodatkowe ?ycie', '?IHI!!', 'MushroomMarioKart8.webp'),
+(7, 'Kondensator strumienia </br> (do podró?y w czasie)', 'Stary ale jary', 'Czas', 'Dr. Emmet Lathrop Brown', 'Cofa cie w czasie', 'Kilka kostek uranu', 'dims.jfif'),
+(8, '15 beczek Olejzyny </br> (paliwo limitowane -> wycofane z obiegu)', 'Rozlana', 'Paliwo', 'Baron Smardz-Rych?y', 'Wybucha', '200$ za beczk? 120 litrów', '5879916818_98ee9edb59_b.jpg'),
+(9, 'Homik do silnika </br> bez tego kr?cio?ka ?mieszngo', 'Umi?sniony', 'Zwierz?ta', 'K.M.', 'Jest tak szybki ?e nawet s?siadka z monitoringiem 24/7 cie nie zauwa?y', 'kr?cio?ek', 'homik.png');
 
 -- --------------------------------------------------------
 
@@ -54,22 +71,7 @@ CREATE TABLE `klienci` (
   `adres` varchar(255) DEFAULT NULL,
   `kod_pocztowy` varchar(255) DEFAULT NULL,
   `punkty_stalego_klienta` int(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `modele`
---
-
-CREATE TABLE `modele` (
-  `id_modelu` int(255) NOT NULL,
-  `nazwa` varchar(255) DEFAULT NULL,
-  `marka` varchar(255) DEFAULT NULL,
-  `typ` varchar(255) DEFAULT NULL,
-  `rozpoczecie_produkcji` year(4) DEFAULT NULL,
-  `zakonczenie_produkcji` year(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -83,7 +85,7 @@ CREATE TABLE `pracownicy` (
   `nazwisko` varchar(255) DEFAULT NULL,
   `wymiar_czasu_pracy` varchar(255) DEFAULT NULL,
   `wynagrodzenie` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -93,14 +95,36 @@ CREATE TABLE `pracownicy` (
 
 CREATE TABLE `samochody` (
   `id_samochodu` int(255) NOT NULL,
-  `id_modelu` int(255) DEFAULT NULL,
   `rocznik` year(4) DEFAULT NULL,
-  `cena` int(255) DEFAULT NULL,
+  `cena` varchar(40) DEFAULT NULL,
   `przebieg` int(255) DEFAULT NULL,
   `rejestracja` varchar(255) DEFAULT NULL,
   `data_p_rejestracji` date DEFAULT NULL,
-  `stan` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `stan` varchar(255) DEFAULT NULL,
+  `zdjecie` varchar(255) DEFAULT NULL,
+  `model` varchar(50) DEFAULT NULL,
+  `producent` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `samochody`
+--
+
+INSERT INTO `samochody` (`id_samochodu`, `rocznik`, `cena`, `przebieg`, `rejestracja`, `data_p_rejestracji`, `stan`, `zdjecie`, `model`, `producent`) VALUES
+(1, 1939, '120', 2147483647, 'SS4820', '1939-10-01', 'po wojenny', 'micra.jpg', 'Micra 93', 'Nissan'),
+(2, 2008, 'dwa kolana', 10000, 'SL0827', '2008-07-19', 'G?o?ny', 'cheese.jpg', 'Mateusz Serek brum brum', '?l?sk'),
+(3, 2015, '14,500', 10000, 'XD4201', '2018-11-24', 'Idealny', 'miata.jfif', 'MX-5 \"Miata </br> (rejestracja w zestawie)', 'Mazda'),
+(4, 2006, 'ODDAMY ZA DOP?AT?', -9386487, 'EL123', '2006-06-23', 'Rozwalony', 'original.jpg', 'Gówno XDD', 'Pixar'),
+(5, 2137, '21372137€', 21372137, 'WX2137', '2005-05-02', '?wi?ty', 'Papamobil.webp', '660 Papamobile', 'STAR'),
+(6, 1985, '400€', 123455432, 'ITSAME', '1992-08-27', 'Szybki', 'wosacz.jfif', 'Pewien s?awny w?sacz', 'Nintendo'),
+(7, 1982, 'Mleko', 76598653, 'SL5371', '1982-03-15', 'Najlepszy', 'ogrodnik-z-taczka.jpg', 'Stary z taczk?', 'Biedronka'),
+(8, 0000, '99$', 49869376, 'WR2349', '1957-01-03', 'Metalowy', 'iss.jfif', 'Puszka na kó?kach', 'Coca-Cola'),
+(9, 1997, '7,999,999$', 2147483647, 'BL5024', '1997-09-30', 'Mega szybki', 'rb16.jpg', 'Bolid RB16 Maxa Verstappena </br> (zestaw opon w k', 'Czerwony byk'),
+(10, 2012, '2,50$', -2147483648, 'OL3891', '2023-06-13', 'Kruchy', 'tesla.jpeg', 'Tesla', 'Elon Musk'),
+(11, 2011, 'we? na to nawet nie patrz', 1, 'W376MNV', '2017-03-25', 'Git', 'mpla.jpg', 'Kolejne gówno XD', 'Ipla'),
+(12, 2006, 'Nie ma odpowiedniej ceny', 2147483647, 'SPEEEEEEEEEEEED', '2006-11-11', 'KOZACKI', 'gigachad szef totalny.jpg', 'Mak?ini </br> szefik totalny i gigaczad', 'Disney Pixar'),
+(13, 2010, '8500000PLN', 15, '(brak oznacze? homologacyjnych)', '2010-12-03', 'spalone opony', 'bolid czarnucha.jpg ', ' AMG Petronas F1 ', ' Mercebenz - dens '),
+(14, 1939, '33000PLN', 0, ' G1 BATMAN ', '0000-00-00', ' sklockowany ', ' batman.jpg ', ' Luftmysza - chop Nietoperkomobil ', ' Detektywistyczne Komiksy ');
 
 -- --------------------------------------------------------
 
@@ -115,7 +139,7 @@ CREATE TABLE `terminarz` (
   `id_klienta` int(255) DEFAULT NULL,
   `opis` varchar(255) DEFAULT NULL,
   `zatwierdzono` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -130,7 +154,7 @@ CREATE TABLE `zakupione_auta` (
   `data_transakcji` date DEFAULT NULL,
   `kwota` int(255) DEFAULT NULL,
   `reklamowano` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -145,7 +169,7 @@ CREATE TABLE `zakupione_czesci` (
   `data_transakcji` date DEFAULT NULL,
   `kwota` int(255) DEFAULT NULL,
   `reklamowano` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -165,12 +189,6 @@ ALTER TABLE `klienci`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indeksy dla tabeli `modele`
---
-ALTER TABLE `modele`
-  ADD PRIMARY KEY (`id_modelu`);
-
---
 -- Indeksy dla tabeli `pracownicy`
 --
 ALTER TABLE `pracownicy`
@@ -180,8 +198,7 @@ ALTER TABLE `pracownicy`
 -- Indeksy dla tabeli `samochody`
 --
 ALTER TABLE `samochody`
-  ADD PRIMARY KEY (`id_samochodu`),
-  ADD KEY `samochody_FKIndex1` (`id_modelu`);
+  ADD PRIMARY KEY (`id_samochodu`);
 
 --
 -- Indeksy dla tabeli `terminarz`
@@ -202,26 +219,27 @@ ALTER TABLE `zakupione_czesci`
   ADD PRIMARY KEY (`id_zakupu`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `czesci`
+--
+ALTER TABLE `czesci`
+  MODIFY `id_czesci` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
   MODIFY `id_klienta` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT dla tabeli `samochody`
+--
+ALTER TABLE `samochody`
+  MODIFY `id_samochodu` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
-
--- UŻYKTOWNICY (DODANO RĘCZNIE)
-
-CREATE USER customer;
-GRANT INSERT, UPDATE, SELECT ON las_czarnas.klienci TO customer;
-GRANT SELECT ON las_czarnas.samochody TO customer;
-GRANT SELECT ON las_czarnas.czesci TO customer;
-GRANT SELECT ON las_czarnas.modele TO customer;
-GRANT SELECT, INSERT ON las_czarnas.terminarz TO custmoer;
-GRANT SELECT, INSERT ON las_czarnas.zakupione_auta TO customer;
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,0 +1,4 @@
+INSERT INTO samochody(rocznik, cena, przebieg, rejestracja, data_p_rejestracji, stan, zdjecie, model, producent)
+VALUES(2010, '8500000PLN', '15 okrązeń', "(brak oznaczeń homologacyjnych)", "2010-12-03", "spalone opony, "bolid czarnucha.jpg", "AMG Petronas F1", "Mercebenz-dens");
+INSERT INTO samochody(rocznik, cena, przebieg, rejestracja, data_p_rejestracji, stan, zdjecie, model, producent)
+VALUES(1939, '33000PLN', 'tysiące przejechanych bandziorów', "G1 BATMAN", "1939-03-26", "sklockowany", "batman.jpg", "Luftmysza-chop Nietoperkomobil", "Detektywistyczne Komiksy")

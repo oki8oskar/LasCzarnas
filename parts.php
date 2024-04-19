@@ -15,6 +15,7 @@
 		<a class="menulink" id='login_button' href='./login.php'> <img src='./images/login_ico_black.svg' alt="Logowanie/Rejestracja" height='64'></a>
 	    <a class="menulink" href='./salon.php'> Salon samochodowy </a>
 		<a class="menulink" href='./parts.php'> Warsztat </a> 	
+		
 	</div>
 	  
     <div id='shop'>
@@ -70,11 +71,6 @@
     $obraz = './images/dims.jfif';
     AddDIV($nazwa, $obraz, $cena);
 
-    $nazwa = 'Butla z gazem';
-    $cena = '999999 v-dolców';
-    $obraz = './last-gasp-back-bling-hd.webp';
-    AddDIV($nazwa, $obraz, $cena);
-
     $nazwa = '15 beczek Olejzyny </br> (paliwo limitowane -> wycofane z obiegu)';
     $cena = '200$ za beczkę 120 litrów';
     $obraz = './images/5879916818_98ee9edb59_b.jpg';
@@ -82,29 +78,8 @@
 
 $nazwa = 'Homik do silnika </br> bez tego kręciołka śmieszngo';
 $cena = 'ten kręciołek';
-$obraz = './images/homik.png';
-AddDIV($nazwa, $obraz, $cena);
+$obraz = './images/homik.png';w
 		?> 
-
-		<?php /*
-			include 'connecting.php';
-			connect($servername, $usename, $assword);
-
-			function AddDIV($name, $image, $price){			
-				echo "
-				<div class='oferta'>	
-					<a href='./oferta.php?t=part&id='>
-					
-					<img src='$image' class='off_img' alt='ilustracja produktu'>
-	 				<h3 class='off_text'>$name</h3>
-					<h4 class='off_price'>$ $price</h4>
-	 				</a>
-				</div>";
-			}
-
-			*/
-		?>
-		
 	</div>
     </div>
     <div id='footer'>

@@ -21,19 +21,19 @@
     <!-- wariant a !-->
 
     <?php
-      /*function AddDIV($id, $name, $image, $price){
+      function AddDIV($name, $image, $price){
         echo "
         <div class='oferta'>
-          <a href='./oferta.php?t=part&id=$id'>
+          <a href='./oferta.php?t=part&id='>
           <a href='./images/sorry_bro.png'>
           <h3 id='nazwa'>$name</h3>
           <img src='$image' class='off_img' alt='ilustracja produktu'>
           <h4> $price</h4>
           </a>
         </div>";
-      }*/
+      }
 
-      /*
+      
       $con = @mysqli_connect("localhost","customer","","las_czarnas");
       $q = "SELECT * FROM samochody";
       $query = mysqli_query($q, $con);
@@ -43,7 +43,7 @@
         $cena = $result['cena'];
         $zdjecie = $result['zdjecie'];
         AddDIV($id, $nazwa, $cena, $zdjecie);
-      }*/
+      }
 
       $nazwa = "Nissan Micra '93 ";
       $cena = '120$';
