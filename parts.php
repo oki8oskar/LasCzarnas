@@ -28,66 +28,28 @@
 		<!-- wariant a !-->
 
 		<?php
+    function AddDIV($id, $name, $image, $price){
+      echo "
+      <div class='oferta'>
+        <a href='./view_item.php?t=part&id=$id'>
+        <h3 id='nazwa'>$name</h3>
+        <img src='./images/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
+        <h4>$price</h4>
+        </a>
+      </div>";
+    }
 
-			function AddDIV($name, $image, $price){
-				echo "
-				<div class='oferta'>
-					<!-- <a href='./oferta.php?t=part&id='> -->
-					<a href='./images/sorry_bro.png'>
-					<h3 id='nazwa'>$name</h3>
-					<img src='$image' class='off_img' alt='ilustracja produktu'>
-					<h4>$price</h4>
-	 				</a>
-				</div>";
-			}
-
-			$nazwa = 'Lusterko lewe do Forda Focusa';
-			$cena = '100$';
-			$obraz = './images/lusterkoff.jpg';
-			AddDIV($nazwa, $obraz, $cena);
-
-			$nazwa = 'Katalizator z demontażu Mercedesa E190';
-			$cena = '300$';
-			$obraz = './images/katalizator1.png';
-			AddDIV($nazwa, $obraz, $cena);
-
-			$nazwa = 'mateusz serek';
-			$cena = 'kość';
-			$obraz = './images/ser.png';
-			AddDIV($nazwa, $obraz, $cena);
-
-			$nazwa = 'Zderzak fajny XD';
-			$cena = 'nie stać cie';
-			$obraz = './images/zderzak.jfif';
-			AddDIV($nazwa, $obraz, $cena);
-
-			$nazwa = 'Kabel RJ45';
-			$cena = 'ZA DARMO';
-			$obraz = './images/kabl.jfif';
-			AddDIV($nazwa, $obraz, $cena);
-
-    $nazwa = 'Grzybulec';
-    $cena = 'ŁIHI!!';
-    $obraz = './images/MushroomMarioKart8.webp';
-    AddDIV($nazwa, $obraz, $cena);
-
-    $nazwa = 'Kondensator strumienia </br> (do podróży w czasie)';
-    $cena = 'Kilka kostek uranu';
-    $obraz = './images/dims.jfif';
-    AddDIV($nazwa, $obraz, $cena);
-
-    $nazwa = '15 beczek Olejzyny </br> (paliwo limitowane -> wycofane z obiegu)';
-    $cena = '200$ za beczkę 120 litrów';
-    $obraz = './images/5879916818_98ee9edb59_b.jpg';
-    AddDIV($nazwa, $obraz, $cena);
-
-$nazwa = 'Homik do silnika </br> bez tego kręciołka śmieszngo';
-$cena = 'ten kręciołek';
-$obraz = './images/homik.png';w
+      $con = @mysqli_connect("localhost","customer","","las_czarnas");
+      $q = "SELECT * FROM czesci";
+      $query = mysqli_query($con, $q);
+      while($result = mysqli_fetch_assoc($query)){
+      $id_samochodu = $result['id_czesci'];
+      $nazwa = $result['nazwa'];
+      $cena = $result['cena'];
+      $zdjecie = $result['zdjecie'];
+      AddDIV($id_samochodu, $nazwa, $zdjecie, $cena);
+    }
 		?>
 	</div>
     </div>
-    <div id='footer'>
-    <!--kontakt i ważne rzeczy-->
-  </body>
 </html>

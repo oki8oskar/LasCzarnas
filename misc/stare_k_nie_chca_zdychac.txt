@@ -1,0 +1,44 @@
+/*
+$nazwa = 'Lusterko lewe do Forda Focusa';
+$cena = '100$';
+$obraz = './images/lusterkoff.jpg';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Katalizator z demontażu Mercedesa E190';
+$cena = '300$';
+$obraz = './images/katalizator1.png';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'mateusz serek';
+$cena = 'kość';
+$obraz = './images/ser.png';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Zderzak fajny XD';
+$cena = 'nie stać cie';
+$obraz = './images/zderzak.jfif';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Kabel RJ45';
+$cena = 'ZA DARMO';
+$obraz = './images/kabl.jfif';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Grzybulec';
+$cena = 'ŁIHI!!';
+$obraz = './images/MushroomMarioKart8.webp';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Kondensator strumienia </br> (do podróży w czasie)';
+$cena = 'Kilka kostek uranu';
+$obraz = './images/dims.jfif';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = '15 beczek Olejzyny </br> (paliwo limitowane -> wycofane z obiegu)';
+$cena = '200$ za beczkę 120 litrów';
+$obraz = './images/5879916818_98ee9edb59_b.jpg';
+AddDIV($nazwa, $obraz, $cena);
+
+$nazwa = 'Homik do silnika </br> bez tego kręciołka śmieszngo';
+$cena = 'ten kręciołek';
+$obraz = './images/homik.png';*/

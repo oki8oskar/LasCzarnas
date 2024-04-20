@@ -27,30 +27,31 @@
     <!-- wariant a !-->
 
     <?php
-      function AddDIV($name, $image, $price){
+      function AddDIV($id, $name, $image, $price){
         echo "
         <div class='oferta'>
-          <a href='./oferta.php?t=part&id='>
-          <a href='./images/sorry_bro.png'>
+          <a href='./view_item.php?t=car&id=$id'>
           <h3 id='nazwa'>$name</h3>
-          <img src='$image' class='off_img' alt='ilustracja produktu'>
-          <h4> $price</h4>
+          <img src='./images/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
+          <h4>$price</h4>
           </a>
         </div>";
       }
 
-
       $con = @mysqli_connect("localhost","customer","","las_czarnas");
       $q = "SELECT * FROM samochody";
-      $query = mysqli_query($q, $con);
+      $query = mysqli_query($con, $q);
       while($result = mysqli_fetch_assoc($query)){
         $id_samochodu = $result['id_samochodu'];
-        $nazwa = $result['id_modelu'];
+        $producent = $result['producent'];
+        $model = $result['model'];
+        $nazwa = $producent." ".$model;
         $cena = $result['cena'];
         $zdjecie = $result['zdjecie'];
-        AddDIV($id, $nazwa, $cena, $zdjecie);
+        AddDIV($id_samochodu, $nazwa, $zdjecie, $cena);
       }
 
+      /*
       $nazwa = "Nissan Micra '93 ";
       $cena = '120$';
       $obraz = './images/micra.jpg';
@@ -119,10 +120,7 @@
     $nazwa = 'Bolid Mercedesa AMG Petronas F1 Team</br> (komplet oponek w zestawie)';
     $cena = '8,500,000$';
     $obraz = './images/bolid czarnucha.jpg';
-    AddDIV($nazwa, $obraz, $cena);
+    AddDIV($nazwa, $obraz, $cena);*/
     ?>
-    <div id='footer'>
-    <!--kontakt i ważne rzeczy-->
-    </div>
   </body>
 </html>
