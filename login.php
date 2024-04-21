@@ -6,7 +6,7 @@
     <html lang = "pl-PL">
     <link rel="favicon" href="./images/favicon.png">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./carousell.css">
+    <link rel="stylesheet" href="./Login.css">
   </head>
   <body>
 	<style>
@@ -50,6 +50,9 @@
         switch($error = @$_GET['error']){
           case 'incorrect_password':
             echo "Nieprawidłowa nazwa użytkownika lub/i hasło!";
+            break;
+          case 'logout':
+            echo 'Pomyślnie wylogowano z konta!';
             break;
         }
         ?>

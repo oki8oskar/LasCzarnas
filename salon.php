@@ -32,7 +32,7 @@
         <div class='oferta'>
           <a href='./view_item.php?t=car&id=$id'>
           <h3 id='nazwa'>$name</h3>
-          <img src='./images/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
+          <img src='./photos/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
           <h4>$price</h4>
           </a>
         </div>";

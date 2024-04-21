@@ -13,25 +13,29 @@
         background-image: url("./images/bkg.jpg");
       }
       #content{
-        background-color: #fff;
-        margin: 10%;
-        border: 2px ridge black;
-        width: 50%;
+        margin: 5%;
+        margin-left: 12.5%;
+        width: 75%;
         height: 50%;
-        border-radius: 25px;
         float: left;
         padding: 2%;
+
+        background-color: #fff;
+        border-radius: 25px;
+        border: 2px ridge black;
       }
       #left{
         float: left;
         border-radius: 25px;
-        height: 250px;
+        height: 400px;
       }
       #right{
         margin-left: 50%;
         width: 50%;
       }
       #buy_button{
+        width: 50%;
+
         padding: 5px;
         padding-left: 15px;
         padding-right: 15px;
@@ -41,6 +45,14 @@
 
         background-color: #11f;
         color: #fff;
+        font-size: 23px;
+      }
+      #buy_button:hover{
+        border: 1px solid #112;
+
+        background-color: #11d;
+        color: #fff;
+        font-size: 23px;
       }
     </style>
 
@@ -87,7 +99,7 @@
 
           echo "
 
-          <img src='./images/$zdjecie' width='45%' id='left' alt='Błąd wczytywania obrazu!'>
+          <img src='./photos/$zdjecie' width='45%' id='left' alt='Błąd wczytywania obrazu!'>
 
           <div id='right'>
             <h1>$nazwa</h1>
@@ -95,6 +107,7 @@
             <h3>$stan</h3>
             <h4>Producent: $producent, Kategoria: $kategoria</h4>
             <p>$opis</p>
+            </br><button id='buy_button'>KUP</button><button id='buy_button'>DODAJ DO KOSZYKA</button>
           </div>
           ";
 
@@ -122,7 +135,7 @@
             <h3>$producent</h3>
             <h2><b>$cena</b></h2>
             <h4>$rocznik / $przebieg km / Stan: $stan / Rejestracja: $rejestracja</h4>
-            </br><button id='buy_button'>KUP</button>
+            </br><button id='buy_button'>KUP</button><button id='buy_button'>DODAJ DO KOSZYKA</button>
           </div>
 
 

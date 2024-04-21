@@ -28,30 +28,31 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `czesci` (
-  `id_czesci` int(255) NOT NULL,
+  `id_czesci` smallint(255) NOT NULL,
   `nazwa` varchar(255) DEFAULT NULL,
   `stan` varchar(255) DEFAULT NULL,
   `kategoria` varchar(255) DEFAULT NULL,
   `producent` varchar(255) DEFAULT NULL,
   `opis` varchar(255) DEFAULT NULL,
   `cena` varchar(40) DEFAULT NULL,
-  `zdjecie` varchar(255) DEFAULT NULL
+  `zdjecie` varchar(255) DEFAULT NULL,
+  `ilosc` smallint(255) DEFAULT 1
 ) ENGINE=InnoDB;
 
 --
 -- Zrzut danych tabeli `czesci`
 --
 
-INSERT INTO `czesci` (`id_czesci`, `nazwa`, `stan`, `kategoria`, `producent`, `opis`, `cena`, `zdjecie`) VALUES
-(1, 'Lusterko lewe do Forda Focusa', 'Najlepszy', 'Lusterka', 'autorskie', 'W bardzo dobrym stanie zachowane, lepszego nie znajdziesz na terenie całej Temerii', '100', 'lusterkoff.jpg'),
-(2, 'Katalizator z demontażu Mercedesa E190', 'Nieznany bo "pożyczony"', 'Katalizatory', 'Sąsiad spod 4', 'Sąsiad złodziej więc kradzież się nie liczy', '300', 'katalizator1.png'),
-(3, 'Mateusz Serek', 'Krytyczny', 'Serki i takie tam', 'Kobieta', 'Lubi łamać kości drugoklasistom', 'kość', 'ser.png'),
-(4, 'Zderzak fajny XD', 'Dobry', 'Zderzaki', 'Toyota', 'Zderzak jest, auta ni ma', 'Nie stać cie', 'zderzak.jfif'),
-(5, 'Kabel RJ45', 'Skręcony', 'Kabelki', 'Informatycy z kopernika', 'Możesz mieć kierownice z internetem', 'ZA DARMO', 'kabl.jfif'),
-(6, 'Grzybulec', 'Zebrany', 'Grzyby', 'Nintendo', 'Powiększa cię i daje dodatkowe życie', 'ŁIHI!!', 'MushroomMarioKart8.webp'),
-(7, 'Kondensator strumienia </br> (do podróży w czasie)', 'Stary ale jary', 'Czas', 'Dr. Emmet Lathrop Brown', 'Cofa cie w czasie', 'Kilka kostek uranu', 'dims.jfif'),
-(8, '15 beczek Olejzyny </br> (paliwo limitowane -> wycofane z obiegu)', 'Rozlana', 'Paliwo', 'Baron Smardz-Rychły', 'Wybucha', '200$ za baryłkę', '5879916818_98ee9edb59_b.jpg'),
-(9, 'Homik do silnika </br> bez tego kręciołka śmieszngo', 'Umięsniony', 'Zwierzęta', 'K.M.', 'Jest tak szybki że nawet sąsiadka z monitoringiem 24/7 cie nie zauważy', 'kręciołek', 'homik.png');
+INSERT INTO `czesci` (`id_czesci`, `nazwa`, `stan`, `kategoria`, `producent`, `opis`, `cena`, `zdjecie`, `ilosc`) VALUES
+(1, 'Lusterko lewe do Forda Focusa', 'Najlepszy', 'Lusterka', 'autorskie', 'W bardzo dobrym stanie zachowane, lepszego nie znajdziesz na terenie całej Temerii', '100', 'lusterkoff.jpg', 2),
+(2, 'Katalizator z demontażu Mercedesa E190', 'Nieznany bo "pożyczony"', 'Katalizatory', 'Sąsiad spod 4', 'Sąsiad złodziej więc kradzież się nie liczy', '300', 'katalizator1.png', 1),
+(3, 'Mateusz Serek', 'Krytyczny', 'Serki i takie tam', 'Kobieta', 'Lubi łamać kości drugoklasistom', 'kość', 'ser.png', 1),
+(4, 'Zderzak fajny XD', 'Dobry', 'Zderzaki', 'Toyota', 'Zderzak jest, auta ni ma', 'Nie stać cie', 'zderzak.jfif', 3),
+(5, 'Kabel RJ45', 'Skręcony', 'Kabelki', 'Informatycy z kopernika', 'Możesz mieć kierownice z internetem', 'ZA DARMO', 'kabl.jfif', 255),
+(6, 'Grzybulec', 'Zebrany', 'Grzyby', 'Nintendo', 'Powiększa cię i daje dodatkowe życie', 'ŁIHI!!', 'MushroomMarioKart8.webp', 152),
+(7, 'Kondensator strumienia', 'Stary ale jary', 'Czas', 'Dr. Emmet Lathrop Brown', 'Cofa cie w czasie', 'Kilka kostek uranu', 'dims.jfif', 1),
+(8, '15 beczek Olejzyny PAKIET', 'Rozlana', 'Paliwo', 'Baron Smardz-Rychły', '(paliwo limitowane -> wycofane z obiegu)', '200$ za baryłkę', '5879916818_98ee9edb59_b.jpg', 15),
+(9, 'Homik do silnika', 'Umięsniony', 'Zwierzęta', 'K.M.', 'Jest tak szybki że nawet sąsiadka z monitoringiem 24/7 cie nie zauważy (brak kręciołka w zestawie)', '20PLN', 'homik.png', 150);
 
 -- --------------------------------------------------------
 

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <html lang = "pl-PL">
     <link rel="favicon" href="./images/favicon.png">
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./offerts.css">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
 	<div id='header'>
@@ -33,7 +33,7 @@
       <div class='oferta'>
         <a href='./view_item.php?t=part&id=$id'>
         <h3 id='nazwa'>$name</h3>
-        <img src='./images/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
+        <img src='./photos/$image' class='off_img' alt='Błąd wczytywania obrazu!'>
         <h4>$price</h4>
         </a>
       </div>";

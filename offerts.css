@@ -1,4 +1,6 @@
 .oferta{
+  text-align: center;
+
   float: left;
 
   width: 24%;
@@ -6,8 +8,8 @@
 
   margin: 5px;
   border: 1px ridge black;
+  border-radius: 10px;
 }
-
 
 .off_img{
   width: 100%;

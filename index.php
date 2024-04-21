@@ -13,9 +13,9 @@
 	  	<a id="logo" href='index.php'><img src='./images/logo_new.svg' alt='Las Czarnas Customs' width='124'></a>
      	<h1 id='co_name'><a id="logo" href='index.php'>LAS CZARNAS CUSTOMS</h1></a>
 
-		    <a class="menulink" id='login_button' href='./account.php'> <img src='./images/login_ico_black.svg' alt="Logowanie/Rejestracja" height='64'></a>
-	      <a class="menulink" href='./salon.php'> Salon samochodowy </a>
-		    <a class="menulink" href='./parts.php'> Warsztat </a>
+		    <a class="menulink" href='./account.php'> <img src='./images/login.svg' alt="Logowanie/Rejestracja" height='80px'></a>
+	      <a class="menulink" href='./salon.php'> <img src='./images/salon.svg' alt="Salon samochodowy" height='80px'> </a>
+		    <a class="menulink" href='./parts.php'> <img src='./images/warsztat.svg' alt="Warsztat" height='80px'> </a>
     <!--TŁUMACZENIE STRONY (ciągle nad tym pracujemy)
         <div id="lang">
      <a class="menulink" href='https://lsc-oskard2-repl-co.translate.goog/?_x_tr_sl=pl&_x_tr_tl=en&_x_tr_hl=pl&_x_tr_pto=wapp'> <img src='./images/en.png' alt='EN' height='20px'></a></option>
@@ -53,12 +53,12 @@
 
 </div>
 <br>
-
+<!--
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
-</div>
+</div> -->
 
 <script>
 let slideIndex = 1;
@@ -98,12 +98,12 @@ function showSlides(n) {
     </span>
     <iframe id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.86126697063446%2C50.279242818411916%2C18.864807486534122%2C50.28073745206009&amp;layer=mapnik&amp;marker=50.27999014110222%2C18.86303722858429"></iframe></div>
     <div id="film">
-      <video width="60%" autoplay muted>
+      <!--<video width="60%" autoplay muted>
         <source src="film.mp4" type="video/mp4">
         </video>
-    </div>
-    <div id='footer'>
-    <!--kontakt i ważne rzeczy-->
-    </div>
+    </div> -->
+    <!-- <div id='footer'>
+    <!--kontakt i ważne rzeczy --
+  </div> -->
   </body>
 </html>
