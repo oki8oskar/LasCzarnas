@@ -11,9 +11,10 @@ a{
 }
 
 .menulink{
+	float: right;
   height: 25%;
   margin: 10px;
-  margin-bottom: 5%;
+	margin-top: 1.5em;
 }
 
 .menulink:hover{
