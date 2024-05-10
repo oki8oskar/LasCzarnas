@@ -4,6 +4,7 @@
     obsługuje on formularz ze strony login.php i przekierowywuje na stronę konta
     */
 
+    
     if(!($action = $_GET['a'])){ //sprawdzamy co wym razem ten user chece zrobić
       header("Location: index.php"); //jak nie chce nic zrobić to niech wypierdziela na stronę główną
       die(); //no i zdychamy, bo nie jesteśmy potrzebni światu

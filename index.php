@@ -105,7 +105,7 @@ function showSlides(n) {
         </video>
     </div> -->
     <!-- <div id='footer'>
-    <!--kontakt i ważne rzeczy --
+    <!-kontakt i ważne rzeczy --
   </div> -->
   </body>
 </html>

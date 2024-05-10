@@ -7,6 +7,42 @@
     <link rel="favicon" href="./images/favicon.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./carousell.css">
+
+    
+<script>
+          function changeTab(page){
+            switch (page) {
+              case 'main':
+                document.getElementById('main').style.display = "block";
+                document.getElementById('history').style.display = "none";
+                document.getElementById('rewards').style.display = "none";
+                document.getElementById('settings').style.display = "none";
+                break;
+              case 'history':
+                
+                document.getElementById('main').style.display = "none";
+                document.getElementById('history').style.display = "block";
+                document.getElementById('rewards').style.display = "none";
+                document.getElementById('settings').style.display = "none";
+                break;
+              case 'rewards':
+                
+                document.getElementById('main').style.display = "none";
+                document.getElementById('history').style.display = "none";
+                document.getElementById('rewards').style.display = "block";
+                document.getElementById('settings').style.display = "none";
+                break;
+              case 'settings':
+                
+                document.getElementById('main').style.display = "none";
+                document.getElementById('history').style.display = "none";
+                document.getElementById('rewards').style.display = "none";
+                document.getElementById('settings').style.display = "block";
+                break;
+            }
+          }
+        </script>
+
   </head>
   <body>
     <div id='header'>
@@ -59,82 +95,98 @@
             header("Location: login.php"); //jak nie ma usernamea to nie ma strony konta - redirect na login.php
           }
         ?>
-
-        <div id='main'></div>
-        <div id='history' style="display: none">
+        </span>
+        <div id='history'>
           <table>
 
           </table>
         </div>
-        <div id='rewards'  style="display: none">
-          <img src='./images/sorry_bro.png' alt='Ta funkcja jeszcze nie jest dostępna w żadnym kraju'>
+        <div id='rewards'>
+          <div></div>
         </div>
-        <!--
-        <div id='settings'  style="display: none"></div>
+        <div id='settings' style="display:none;">
+          <?php
 
-          <table id='data_container'>
+          $username = $_SESSION['username'];
+
+          $conn = mysqli_connect("localhost","customer","","las_czarnas");
+          $zap = "SELECT * FROM klienci WHERE username = '$username'";
+          $q = mysqli_query($conn, $zap);
+          $result = mysqli_fetch_assoc($q);
+          echo "<table id='data_container'>
           <tr>
             <td>Nazwa uzytkownika:</td>
-            <td>$username</td>
+            <td>$result[username]</td>
           </tr>
           <tr>
             <td>Imię</td>
-            <td>$name</td>
+            <td>$result[imie]</td>
           </tr>
           <tr>
             <td>Nazwisko</td>
-            <td>$lname</td>
+            <td>$result[nazwisko]</td>
           </tr>
           <tr>
             <td>Telefon</td>
-            <td>$telefon</td>
+            <td>$result[telefon]</td>
           </tr>
           <tr>
             <td>E-mail:</td>
-            <td>$email</td>
+            <td>$result[email]</td>
           </tr>
           <tr>
             <td>Adres:</td>
-            <td>$adres</br>$miasto $kod_pocztowy</td>
+            <td>$result[adres]</br>$result[miasto] $result[kod_pocztowy]</td>
           </tr>
           <tr>
             <td>Punkty programu lojanościowego RIM POINTS:</td>
-            <td>$rp</td>
-          </tr></table>
-
-          <form action='auth.php?a=update_data' id="data_editor">
-            <tr>
-              <td>Nazwa uzytkownika:</td>
-              <td><input type='text' name='username' value='$username'></td>
-            </tr>
-            <tr>
+            <td>$result[punkty_stalego_klienta]</td>
+          </tr></table><br>
+          
+          <form action='account.php' method='POST' id='data_editor'>
+            <tr>    
               <td>Imię</td>
-              <td><input type='text' name='name' value='$name'></td>
-            </tr>
+              <td><input type='text' name='name' value='$result[imie]'></td>
+            </tr><br>
             <tr>
               <td>Nazwisko</td>
-              <td><input type='text' name='lname' value='$lname'></td>
-            </tr>
+              <td><input type='text' name='lname' value='$result[nazwisko]'></td>
+            </tr><br>
             <tr>
               <td>Telefon</td>
-              <td><input type='number' name='phone' value='$phone'></td>
-            </tr>
+              <td><input type='number' name='phone' value='$result[telefon]'></td>
+            </tr><br>
             <tr>
               <td>E-mail:</td>
-              <td><input type='text' name='email' value='$email'></td>
-            </tr>
+              <td><input type='text' name='email' value='$result[email]'></td>
+            </tr><br>
             <tr>
               <td>Adres:</td>
-              <td><input type='text' name='adress' value='$adress'>
-              </br><input type='text' name='city' value='$city'>
-              <input type='text' name='postal' value='$postal'></td>
-            </tr>
+              <td><input type='text' name='adress' value='$result[adres]'>
+              <input type='text' name='city' value='$result[miasto]'>
+            </tr><br>
+            <input type='submit' value='Edytuj'>
             </table>
-          </form>
+          </form></div>
+          ";
 
-        </div> -->
+          mysqli_close($conn);
+          ?>
 
-      </span>
+          
+          <?php
+           $username = $_SESSION['username'];
+          $conn = mysqli_connect("localhost","customer","","las_czarnas");
+          $imie = @$_POST['name'];
+          $nazwisko = @$_POST['lname'];
+          $telefon = @$_POST['phone'];
+          $email = @$_POST['email'];
+          $adres = @$_POST['adress'];
+          $miasto = @$_POST['city'];
+          $zap = "UPDATE klienci SET `email`='$email',`imie`='$imie',`nazwisko`='$nazwisko',`telefon`='$telefon',`miasto`='$miasto',`adres`='$adres' WHERE username = '$username'";
+          $query = mysqli_query($conn, $zap);
+          ?>
+        </div>
     </div>
   </body>
 </html>
