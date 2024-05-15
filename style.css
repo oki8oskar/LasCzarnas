@@ -17,9 +17,6 @@ a{
 	margin-top: 1.5em;
 }
 
-.menulink:hover{
-  	text-decoration: underline;
-}
 
 #header{
 	height: 130px;
@@ -56,7 +53,7 @@ a{
 	float:left;
 	width:40%;
 	height: 500px;
-	padding: 12%;
+	padding: 5%;
 }
 
 #osm{
@@ -70,6 +67,22 @@ a{
   height:500px;
 }
 
-#film {
+#video {
 	float: left;
+	width: 60%;
+	height: 540px;
+}
+#opis {
+	float: right;
+	background-color: #00f;
+	width: 40%;
+	color:white;
+	text-align: center;
+	height: 642px;
+	font-weight: bold;
+	font-size:larger;
+	padding:5px;
+}
+#desc {
+	margin: 0px;
 }

@@ -91,21 +91,47 @@ function showSlides(n) {
 }
 </script>
     </div>
+    <div id="desc">
+      <video width="60%" autoplay muted loop>
+        <source src="auto.mp4" type="video/mp4">
+        </video>
+        <span id="opis">
+          <br>
+          <h2> Dlaczego robimy co robimy </h2>
+          <br>
+          <p> Las Czarnas Customs powstał dzięki pasji do samochodów kilku uczniów z Kopernika, małej ilości godzin zawodowych i marzeniu do posiadania własnej strony salonu samochodowego. <br>
+          Pomysł narodził się 6 miesięcy temu, 24 października 2023 roku. Wtedy narodził się masz salon (i warsztat też).<br>
+          Teraz jesteśmy jednych z najlepszych salonów na Czarnym Lesie (Może dlatego, że jego obszar obejmuje tylko jedno skrzyżowanie)<br><br>
+          Oferujemy usługi takie jak:
+          <br><br>
+          - Modyfikacja samochodów <br>
+          - Sprzedaż samochodów i części samochodowych <br>
+          - Przegląd samochodów
+          <br>
+          <br>
+          <br>
+          Przyjedź do naszego salonu, lub zadzwoń do nas, aby się przekonać.
+          <br>
+          Zapraszamy!
+          <br>
+          </p>
+        </span>
+    </div>
+    <div id='footer'>
     <div>
-      <span id='map_left_content'><h2>Odwiedź nasz salon</h2>
-      <ul>
-        <li>Ruda Śląska, Czarny Las 41-709</li>
-        <li>Ulica Lwa Tołstoja 6</li>
-      </ul>
+      <span id='map_left_content'>
+        <h2>Las Czarnas sp.z.o.o.</h2>
+        <h3>Odwiedź nasz salon</h3>
+        <ul>
+          <li>Ruda Śląska, Czarny Las 41-709 <br>Ulica Lwa Tołstoja 6</li>
+        </ul>
+        <br><br>
+        <h3>Kontakt</h3>
+        <h2>Skontaktuj się z nami</h2>
+        <p>Tel.: 532873091</p>
+        <p>E-mail: kontakt@lasczarnas.pl</p>
     </span>
     <iframe id="osm" src="https://www.openstreetmap.org/export/embed.html?bbox=18.86126697063446%2C50.279242818411916%2C18.864807486534122%2C50.28073745206009&amp;layer=mapnik&amp;marker=50.27999014110222%2C18.86303722858429"></iframe></div>
-    <div id="film">
-      <!--<video width="60%" autoplay muted>
-        <source src="film.mp4" type="video/mp4">
-        </video>
-    </div> -->
-    <!-- <div id='footer'>
-    <!-kontakt i ważne rzeczy --
-  </div> -->
+  </div>
   </body>
 </html>
